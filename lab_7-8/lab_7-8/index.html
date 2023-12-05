@@ -1,0 +1,86 @@
+<!-- сообщаем браузеру, как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+
+<!-- оболочка дока, язык содержимого -->
+<html lang="en">
+
+   <!-- заголовок страницы -->
+   <head>
+
+      <!-- кодировка -->
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+      <!-- заголовок страницы в браузере -->
+      <title>lab_7-8</title>
+
+      <!-- подключение шрифтов -->
+
+   
+      <!-- подключение CSS таблицы стилей -->
+      <link rel="stylesheet" href="css/style.css">
+
+   </head>
+
+   <!-- отображаемое тело страницы -->
+   <body>
+      <!-- слайдер -->
+      <div class="slider">
+         <!-- слайд 1 -->
+         <div class="slide">
+            <a class="previous" onclick="previousSlide()">&#10092;</a>
+            <img src="https://sun83-1.userapi.com/impg/smAUBS5-1tAPJkKQLee0XYf4OAByyDL1f5VwAA/TQwSFw23Gng.jpg?size=807x807&quality=95&sign=54659e53c47db88e8b7b38aedeed5243&c_uniq_tag=6E8XrJMvTb6mWcc68EmG-4VMoSMEQG5x5YBX-FKEXGA&type=album">
+            <a class="next" onclick="nextSlide()">&#10093;</a>
+         </div>
+         <!-- слайд 2 -->
+         <div class="slide">
+            <a class="previous" onclick="previousSlide()">&#10092;</a>
+            <img src="https://sun9-19.userapi.com/impg/_gAiWvjF7G4_jeW2gJJJk4fWGlUGaUeuvK8weg/onkaMSR3a9w.jpg?size=807x807&quality=95&sign=05464f455880a302fafe5b30eb6cc2b6&c_uniq_tag=K4ZCZ9xcLHT8cCAEA3HTLMGIOglvJvqSeoyAWpYpzYk&type=album">
+            <a class="next" onclick="nextSlide()">&#10093;</a>
+         </div>
+         <!-- слайд 3 -->
+         <div class="slide">
+            <a class="previous" onclick="previousSlide()">&#10092;</a>
+            <img src="https://sun9-76.userapi.com/impg/kuSwb_aVMRBOMnscA6ZF8Ve-0ZyH_ejLKylPJA/_N5WwCipchE.jpg?size=807x807&quality=95&sign=88cedf3bed1c2230d5d1fcff9af6b1b8&c_uniq_tag=MEIVAoTnNq2I0bvIRxllv-jorIZhd8rB159NP1kNbAw&type=album">
+            <a class="next" onclick="nextSlide()">&#10093;</a>
+         </div>
+                  
+      </div>
+
+      <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      function nextSlide() {
+         showSlides(slideIndex += 1);
+      }
+
+      function previousSlide() {
+         showSlides(slideIndex -= 1);  
+      }
+
+      function currentSlide(n) {
+         showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+         let slides = document.getElementsByClassName("slide");
+   
+         if (n > slides.length) {
+            slideIndex = 1
+         }
+
+         if (n < 1) {
+            slideIndex = slides.length
+         }
+
+         for (let slide of slides) {
+            slide.style.display = "none";
+         }
+   
+         slides[slideIndex - 1].style.display = "flex";    
+      }
+   </script>
+
+</body>
+</html>
